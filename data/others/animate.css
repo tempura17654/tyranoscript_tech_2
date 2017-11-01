@@ -1,0 +1,198 @@
+@charset "UTF-8";
+
+/*
+
+	●オリジナルのアニメーション定義の仕方
+	～hogehogeInというアニメーションを追加したい場合～
+	
+	①hogehogeInという名前のキーフレームアニメーションを定義
+	②hogehogeInクラスに対して、①のアニメーションを適用する
+	
+		↓具体的な記述はこう。（ ... は省略の意）
+		-webkit-無しはIE, Edge, FireFoxなどのため
+		-webkit-付きはChrome, Opera, アプリ版などのため
+		
+		@keyframes hogehogeIn { ... }
+
+		@-webkit-keyframes hogehogeIn { ... }
+
+		.hogehogeIn {
+			-webkit-animation-name: hogehogeIn;
+			animation-name: hogehogeIn;
+		}
+
+*/
+
+/****************************************
+オリジナルの[bg]メソッド：brightIn定義
+*****************************************/
+
+@keyframes brightIn {
+  from {
+    opacity: 0;
+    filter: brightness(400%);
+  }
+  to {
+    opacity: 1;
+    filter: brightness(100%);
+  }
+}
+
+@-webkit-keyframes brightIn {
+  from {
+    opacity: 0;
+    -webkit-filter: brightness(400%);
+  }
+  to {
+    opacity: 1;
+    -webkit-filter: brightness(100%);
+  }
+}
+
+.brightIn {
+  -webkit-animation-name: brightIn;
+  animation-name: brightIn;
+}
+
+
+
+
+/****************************************
+オリジナルの[bg]メソッド：columnIn定義
+*****************************************/
+
+@keyframes columnIn {
+  from {
+    opacity: 0;
+    transform: scaleY(3);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@-webkit-keyframes columnIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scaleY(3);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scaleY(1);
+  }
+}
+
+.columnIn {
+  -webkit-animation-name: columnIn;
+  animation-name: columnIn;
+}
+
+
+
+
+
+/****************************************
+オリジナルの[bg]メソッド：circleIn定義
+*****************************************/
+
+
+@keyframes circleIn {
+  from {
+    filter: brightness(0%);
+    clip-path: circle(0.5% at  -1% 50%)
+  }
+  40% {
+    filter: brightness(0%);
+    clip-path: circle(0.5% at 101% 50%);
+  }
+  to {
+    filter: brightness(100%);
+    clip-path: circle(100% at  50% 50%);
+  }
+}
+
+@-webkit-keyframes circleIn {
+  from {
+    -webkit-filter: brightness(0%);
+    -webkit-clip-path: circle(0.5% at  -1% 50%)
+  }
+  40% {
+    -webkit-filter: brightness(0%);
+    -webkit-clip-path: circle(0.5% at 101% 50%);
+  }
+  to {
+    -webkit-filter: brightness(100%);
+    -webkit-clip-path: circle(100% at  50% 50%);
+  }
+}
+
+.circleIn {
+  -webkit-animation-name: circleIn;
+  animation-name: circleIn;
+}
+
+
+/****************************************
+オリジナルの[bg]メソッド：clipIn定義
+*****************************************/
+
+
+@keyframes clipIn {
+  from {
+    clip-path: polygon(50% 49.8%,  50% 49.8%,  50%  50.2%, 50% 50.2%);
+  }
+  50% {
+    clip-path: polygon( 0% 49.8%, 100% 49.8%, 100%  50.2%,  0%  50.2%);
+  }
+  to {
+    clip-path: polygon( 0%  0.0%, 100%  0.0%, 100% 100.0%,  0% 100.0%);
+  }
+}
+
+@-webkit-keyframes clipIn {
+  from {
+    -webkit-clip-path: polygon(50% 49.8%,  50% 49.8%,  50%  50.2%, 50% 50.2%);
+  }
+  50% {
+    -webkit-clip-path: polygon( 0% 49.8%, 100% 49.8%, 100%  50.2%,  0%  50.2%);
+  }
+  to {
+    -webkit-clip-path: polygon( 0%  0.0%, 100%  0.0%, 100% 100.0%,  0% 100.0%);
+  }
+}
+
+.clipIn {
+  -webkit-animation-name: clipIn;
+  animation-name: clipIn;
+}
+
+
+/****************************************
+オリジナルの[bg]メソッド：clipIn定義
+*****************************************/
+
+
+@keyframes sliceIn {
+  from {
+    clip-path: polygon(-180% 0%,   0% 0%,   0% 33%, -80% 33%, -80% 66%, -160% 66%, -160% 100%, -180% 100%);
+  }
+  to {
+    clip-path: polygon(   0% 0%, 100% 0%, 100% 33%, 100% 33%, 100% 66%,  100% 66%,  100% 100%,    0% 100%);
+  }
+}
+
+@-webkit-keyframes sliceIn {
+  from {
+    -webkit-clip-path: polygon(-180% 0%,   0% 0%,   0% 33%, -80% 33%, -80% 66%, -160% 66%, -160% 100%, -180% 100%);
+  }
+  to {
+    -webkit-clip-path: polygon(   0% 0%, 100% 0%, 100% 33%, 100% 33%, 100% 66%,  100% 66%,  100% 100%,    0% 100%);
+  }
+}
+
+.sliceIn {
+  -webkit-animation-name: sliceIn;
+  animation-name: sliceIn;
+}

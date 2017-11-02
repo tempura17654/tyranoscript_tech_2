@@ -480,10 +480,16 @@
 			tf.exp     = 'tf.put_pos=' + tf.pos;
 		[endscript]
 		
-		; [free][kanim]
+		; [kanim][iscript]
 		; いまある石をキーフレームアニメーション付きで除去します。
 		;[free   layer="1" wait="false"   name="&tf.name" time="444"]
 		[kanim  keyframe="othello_close" name="&tf.name" time="444" easing="ease-out"]
+		[iscript]
+			var j_stn = $('.' + tf.name);
+			setTimeout(function(){
+				j_stn.remove();
+			}, 444);
+		[endscript]
 		
 		; [image][kanim]
 		; 裏側の石をキーフレームアニメーション付きで描画します。

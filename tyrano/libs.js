@@ -351,7 +351,15 @@
         }
 
     };
-
+    
+    $.isTyranoPlayer = function(){
+        if(typeof _tyrano_player != "undefined"){
+            return true;
+        }else{
+            return false;
+        }
+    };
+    
     $.lang = function(key) {
 
         if (tyrano_lang["word"][key]) {

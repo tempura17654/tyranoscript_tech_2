@@ -40,8 +40,8 @@ HTMLっていうのは、[<y]Webページ[>]を形作っている言語のこと
 ; それだけのために！？という感じですが、[anim]よりも動作が軽快なので、
 ; 大きな画像を動かすときはキーフレームアニメーションを使うことを検討するとよいです。
 [keyframe name="sumaho_up"]
-[frame p="  0%" y="640"]
-[frame p="100%" y="  0"]
+  [frame p="  0%" y="640"]
+  [frame p="100%" y="  0"]
 [endkeyframe]
 
 ; [image][kanim][wait][stop_kanim]

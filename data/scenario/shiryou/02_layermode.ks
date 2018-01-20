@@ -241,8 +241,8 @@ luminosity（輝度）。[p][free_layermode time="0"]
 ; 拡縮を繰り替すキーフレームアニメーションです。
 ; 反復再生を前提としています。
 [keyframe name="zoom_in_out"]
-[frame p="  0%" scale="1.0"]
-[frame p="100%" scale="1.1"]
+  [frame p="  0%" scale="1.0"]
+  [frame p="100%" scale="1.1"]
 [endkeyframe]
 
 ; [kanim]

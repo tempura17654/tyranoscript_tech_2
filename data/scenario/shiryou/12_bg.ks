@@ -281,20 +281,20 @@ IE, Edgeで動作しないものを含むためコメントアウト。
 ; [macro]～[endmacro]
 ; イン・トランジションのマクロ[trans_in]を定義します。
 [macro name="trans_in"]
-;「%」記号はマクロに渡された値をそのまま渡す記号です。
-; さらに「|」を書くことで、マクロに値が渡されなかった場合の値（初期値）を指定できます。
-[trans layer="%layer|0" time="%time|700" method="%method|fadeIn"]
-[wt]
+  ;「%」記号はマクロに渡された値をそのまま渡す記号です。
+  ; さらに「|」を書くことで、マクロに値が渡されなかった場合の値（初期値）を指定できます。
+  [trans layer="%layer|0" time="%time|700" method="%method|fadeIn"]
+  [wt]
 [endmacro]
 
 ; [macro]～[endmacro]
 ; アウト・トランジションのマクロ[trans_out]を定義します。
 [macro name="trans_out"]
-[backlay   layer="%layer|0"]
-[trans     layer="%layer|0" time="%time|700" method="%method|fadeOut"]
-[freeimage layer="%layer|0"]
-[wt]
-[freeimage layer="%layer|0"]
+  [backlay   layer="%layer|0"]
+  [trans     layer="%layer|0" time="%time|700" method="%method|fadeOut"]
+  [freeimage layer="%layer|0"]
+  [wt]
+  [freeimage layer="%layer|0"]
 [endmacro]
 
 [cm]fadeInDown & fadeOutDown[l]

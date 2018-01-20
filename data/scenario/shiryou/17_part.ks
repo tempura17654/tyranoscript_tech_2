@@ -64,45 +64,45 @@
 ; x, y にあかねのパーツを全表示するマクロです。
 [macro name="akane/show"]
 
-; [iscript]～[endscript]
-[iscript]
-; マクロに渡された属性値は、属性名の頭に mp. をつけることで扱うことができます。
-; ここで注意が必要で、マクロに渡された属性値はすべて文字列データになっています。
-;
-;(文字列データとは別に数値データというものもあり、両者は明確に扱いが異なります！
-; 文字列の足し算は '1' + '1' = '11' であり、数値の足し算は 1 + 1 = 2 となります。)
-;
-; ここでは、文字列データを数値データに変換する処理を行っています。
-; 何やってんだかわからん、わかりたくもないという場合何も考えずコピペしてください。
-mp.x     = Number(mp.x)
-mp.y     = Number(mp.y)
-; 初期値を指定します
-mp.layer = mp.layer || '0'
-mp.time  = mp.time  || '1000'
-[endscript]
+  ; [iscript]～[endscript]
+  [iscript]
+  ; マクロに渡された属性値は、属性名の頭に mp. をつけることで扱うことができます。
+  ; ここで注意が必要で、マクロに渡された属性値はすべて文字列データになっています。
+  ;
+  ;(文字列データとは別に数値データというものもあり、両者は明確に扱いが異なります！
+  ; 文字列の足し算は '1' + '1' = '11' であり、数値の足し算は 1 + 1 = 2 となります。)
+  ;
+  ; ここでは、文字列データを数値データに変換する処理を行っています。
+  ; 何やってんだかわからん、わかりたくもないという場合何も考えずコピペしてください。
+  mp.x     = Number(mp.x)
+  mp.y     = Number(mp.y)
+  ; 初期値を指定します
+  mp.layer = mp.layer || '0'
+  mp.time  = mp.time  || '1000'
+  [endscript]
 
-; [chara_show]
-; 上で定義したパーツを表示していきます。
-;
-; left属性とtop属性の値の頭についている&に着目してください。
-; これは、そのあとに続く文字をJS式として評価せよという記号です。
-; つまり、たとえば「&mp.x + 142」は「mp.x の数値に 142 を足した値」を指定しています。
-;
-; また、layer="%layer"で、マクロに渡されたlayer属性の値をそのまま渡しています。
-; これはlayer="&mp.layer"と書いても同じです。
-[chara_show name="akane_part_base"     left="&mp.x +   0" top="&mp.y +   0" time="0" face="default" layer="%layer"]
-[chara_show name="akane_part_me"       left="&mp.x + 142" top="&mp.y + 147" time="0" face="default" layer="%layer"]
-[chara_show name="akane_part_kuchi"    left="&mp.x + 142" top="&mp.y + 206" time="0" face="default" layer="%layer"]
-[chara_show name="akane_part_mayu"     left="&mp.x + 142" top="&mp.y + 129" time="0" face="default" layer="%layer"]
-[chara_show name="akane_option_ase"    left="&mp.x + 142" top="&mp.y +  96" time="0" face="default" layer="%layer"]
-[chara_show name="akane_option_tere"   left="&mp.x + 142" top="&mp.y +  96" time="0" face="default" layer="%layer"]
-[chara_show name="akane_option_namida" left="&mp.x + 142" top="&mp.y +  96" time="0" face="default" layer="%layer"]
+  ; [chara_show]
+  ; 上で定義したパーツを表示していきます。
+  ;
+  ; left属性とtop属性の値の頭についている&に着目してください。
+  ; これは、そのあとに続く文字をJS式として評価せよという記号です。
+  ; つまり、たとえば「&mp.x + 142」は「mp.x の数値に 142 を足した値」を指定しています。
+  ;
+  ; また、layer="%layer"で、マクロに渡されたlayer属性の値をそのまま渡しています。
+  ; これはlayer="&mp.layer"と書いても同じです。
+  [chara_show name="akane_part_base"     left="&mp.x +   0" top="&mp.y +   0" time="0" face="default" layer="%layer"]
+  [chara_show name="akane_part_me"       left="&mp.x + 142" top="&mp.y + 147" time="0" face="default" layer="%layer"]
+  [chara_show name="akane_part_kuchi"    left="&mp.x + 142" top="&mp.y + 206" time="0" face="default" layer="%layer"]
+  [chara_show name="akane_part_mayu"     left="&mp.x + 142" top="&mp.y + 129" time="0" face="default" layer="%layer"]
+  [chara_show name="akane_option_ase"    left="&mp.x + 142" top="&mp.y +  96" time="0" face="default" layer="%layer"]
+  [chara_show name="akane_option_tere"   left="&mp.x + 142" top="&mp.y +  96" time="0" face="default" layer="%layer"]
+  [chara_show name="akane_option_namida" left="&mp.x + 142" top="&mp.y +  96" time="0" face="default" layer="%layer"]
 
-; [wrap]
-; これは独自マクロです(→macro.ks)。
-; あかねのパーツ群をひとつのラップでくるみます。
-; 以降はこのラップに対してアニメーション処理を行います。
-[wrap layer="%layer" page="fore" x="280" y="40" width="400" height="600" wrap_name="akane_all" name="akane_part_base, akane_part_mayu, akane_part_me, akane_part_kuchi, akane_option_ase, akane_option_tere, akane_option_namida"]
+  ; [wrap]
+  ; これは独自マクロです(→macro.ks)。
+  ; あかねのパーツ群をひとつのラップでくるみます。
+  ; 以降はこのラップに対してアニメーション処理を行います。
+  [wrap layer="%layer" page="fore" x="280" y="40" width="400" height="600" wrap_name="akane_all" name="akane_part_base, akane_part_mayu, akane_part_me, akane_part_kuchi, akane_option_ase, akane_option_tere, akane_option_namida"]
 
 [endmacro]
 
@@ -145,24 +145,24 @@ mp.time  = mp.time  || '1000'
 ; さらに、各パーツの組み合わせを表情として登録します。
 ; これによって、[akane/happy]とすれば眉・目・口が全部その表情に変わります。
 [macro name="akane/happy]
-[akane/mayu/happy wait="false"]
-[akane/me/warai   wait="false"]
-[akane/kuchi/a                ]
+  [akane/mayu/happy wait="false"]
+  [akane/me/warai   wait="false"]
+  [akane/kuchi/a                ]
 [endmacro]
 [macro name="akane/usual"]
-[akane/mayu/usual wait="false"]
-[akane/me/usual   wait="false"]
-[akane/kuchi/usual            ]
+  [akane/mayu/usual wait="false"]
+  [akane/me/usual   wait="false"]
+  [akane/kuchi/usual            ]
 [endmacro]
 [macro name="akane/angry"]
-[akane/mayu/angry wait="false"]
-[akane/me/fuse    wait="false"]
-[akane/kuchi/o                ]
+  [akane/mayu/angry wait="false"]
+  [akane/me/fuse    wait="false"]
+  [akane/kuchi/o                ]
 [endmacro]
 [macro name="akane/sad"]
-[akane/mayu/sad   wait="false"]
-[akane/me/toji    wait="false"]
-[akane/kuchi/u                ]
+  [akane/mayu/sad   wait="false"]
+  [akane/me/toji    wait="false"]
+  [akane/kuchi/u                ]
 [endmacro]
 
 
@@ -213,23 +213,23 @@ mp.time  = mp.time  || '1000'
 ; [keyframe]～[endkeyframe]
 ; いろいろ動かすキーフレームアニメーション。
 [keyframe name="part_test"]
-[frame p="&  0 / 17 * 100 + '%' " scaleX="1" scaleY="1" scale="1" skewX="0deg" skewY="0deg" skew="0deg" opacity="1" rotate="0deg" rotateX="0deg" rotateY="0deg" rotateZ="0deg"]
-[frame p="&  1 / 17 * 100 + '%' " x="100"          ]
-[frame p="&  2 / 17 * 100 + '%' "         y="100"  ]
-[frame p="&  3 / 17 * 100 + '%' " x="  0"          ]
-[frame p="&  4 / 17 * 100 + '%' "         y="  0"  ]
-[frame p="&  5 / 17 * 100 + '%' " scaleX="2"           ]
-[frame p="&  6 / 17 * 100 + '%' "            scaleY="2"]
-[frame p="&  7 / 17 * 100 + '%' " scaleX="1"           ]
-[frame p="&  8 / 17 * 100 + '%' "            scaleY="1"]
-[frame p="&  9 / 17 * 100 + '%' " scale="2.0"]
-[frame p="& 10 / 17 * 100 + '%' " scale="0.5"]
-[frame p="& 11 / 17 * 100 + '%' " scale="1.0"]
-[frame p="& 13 / 17 * 100 + '%' " rotateX="360deg"]
-[frame p="& 14 / 17 * 100 + '%' " rotateY="360deg"]
-[frame p="& 15 / 17 * 100 + '%' " rotateZ="360deg" opacity="1"]
-[frame p="& 16 / 17 * 100 + '%' " opacity="0"]
-[frame p="& 17 / 17 * 100 + '%' " opacity="1"]
+  [frame p="&  0 / 17 * 100 + '%' " scaleX="1" scaleY="1" scale="1" skewX="0deg" skewY="0deg" skew="0deg" opacity="1" rotate="0deg" rotateX="0deg" rotateY="0deg" rotateZ="0deg"]
+  [frame p="&  1 / 17 * 100 + '%' " x="100"          ]
+  [frame p="&  2 / 17 * 100 + '%' "         y="100"  ]
+  [frame p="&  3 / 17 * 100 + '%' " x="  0"          ]
+  [frame p="&  4 / 17 * 100 + '%' "         y="  0"  ]
+  [frame p="&  5 / 17 * 100 + '%' " scaleX="2"           ]
+  [frame p="&  6 / 17 * 100 + '%' "            scaleY="2"]
+  [frame p="&  7 / 17 * 100 + '%' " scaleX="1"           ]
+  [frame p="&  8 / 17 * 100 + '%' "            scaleY="1"]
+  [frame p="&  9 / 17 * 100 + '%' " scale="2.0"]
+  [frame p="& 10 / 17 * 100 + '%' " scale="0.5"]
+  [frame p="& 11 / 17 * 100 + '%' " scale="1.0"]
+  [frame p="& 13 / 17 * 100 + '%' " rotateX="360deg"]
+  [frame p="& 14 / 17 * 100 + '%' " rotateY="360deg"]
+  [frame p="& 15 / 17 * 100 + '%' " rotateZ="360deg" opacity="1"]
+  [frame p="& 16 / 17 * 100 + '%' " opacity="0"]
+  [frame p="& 17 / 17 * 100 + '%' " opacity="1"]
 [endkeyframe]
 
 ; [kanim]

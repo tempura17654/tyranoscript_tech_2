@@ -36,21 +36,21 @@ V450から、キャラクターのボイスを[<y]連番ファイル[>]で管理
 ; [keyframe]～[endkeyframe]
 ; ラジカセの画像をみょーんとさせるキーフレームを定義します。
 [keyframe name="pop"]
-; [frame]×３
-; 縦拡大率増加＋若干上に移動。
-[frame p="  0%" scaleY="1.0" y="  0"]
-[frame p=" 50%" scaleY="1.1" y="-10"]
-[frame p="100%" scaleY="1.0" y="  0"]
+  ; [frame]×３
+  ; 縦拡大率増加＋若干上に移動。
+  [frame p="  0%" scaleY="1.0" y="  0"]
+  [frame p=" 50%" scaleY="1.1" y="-10"]
+  [frame p="100%" scaleY="1.0" y="  0"]
 [endkeyframe]
 
 ; [macro]～[endmacro]
 ; 上記キーフレームアニメーションをラジカセの画像に適用するだけの
 ; マクロを定義しておきます。
 [macro name="!"]
-; [stop_kanim][kanim]
-; アニメーションを切ってから適用しなおす。
-[stop_kanim name="cassette"]
-[kanim name="cassette" keyframe="pop" time="400"]
+  ; [stop_kanim][kanim]
+  ; アニメーションを切ってから適用しなおす。
+  [stop_kanim name="cassette"]
+  [kanim name="cassette" keyframe="pop" time="400"]
 [endmacro]
 
 

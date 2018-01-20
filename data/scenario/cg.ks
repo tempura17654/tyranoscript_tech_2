@@ -237,14 +237,14 @@ tf.cg_index          = 0;        // 選択されたCGの差分配列の要素番
 ; [if][jump]
 ; まだ表示すべき差分画像が残っているなら、このラベルに飛びなおします。
 [if exp=" tf.selected_cg_image.length > tf.cg_index "]
-[jump target="cg_next_image"]
+  [jump target="cg_next_image"]
 
 ; [else][freeimage][jump]
 ; もう表示すべき差分画像が残っていないなら、
 ; レイヤー１を解放して *cgpage に戻ります。
 [else]
-[freeimage layer="1" page="back"]
-[freeimage layer="1" page="fore" time="700"]
-[jump target="*cgpage"]
+  [freeimage layer="1" page="back"]
+  [freeimage layer="1" page="fore" time="700"]
+  [jump target="*cgpage"]
 
 [endif]

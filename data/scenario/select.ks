@@ -197,24 +197,24 @@
 ; [ignore]で対策をしているということですね。
 [ignore exp="f.current_page_index >= 4"]
 
-; [eval]
-; 現在のページ番号を１増加させ、現在のページラベルを更新します。
-[eval exp="f.current_page_index++"]
-[eval exp="f.current_page_label = '*Sub_Page' + f.current_page_index"]
+  ; [eval]
+  ; 現在のページ番号を１増加させ、現在のページラベルを更新します。
+  [eval exp="f.current_page_index++"]
+  [eval exp="f.current_page_label = '*Sub_Page' + f.current_page_index"]
 
-; [cm]
-; フリーレイヤーを解放します。
-; (このタグで、クリッカブルボタンや非fixなグラフィカルボタンなどが消えます。)
-[cm]
+  ; [cm]
+  ; フリーレイヤーを解放します。
+  ; (このタグで、クリッカブルボタンや非fixなグラフィカルボタンなどが消えます。)
+  [cm]
 
-; [freeimage]
-; レイヤー０を開放します。
-; (このタグで、リストアイテムを形作っていた画像・文字がすべて消えます。)
-[freeimage layer="0"]
+  ; [freeimage]
+  ; レイヤー０を開放します。
+  ; (このタグで、リストアイテムを形作っていた画像・文字がすべて消えます。)
+  [freeimage layer="0"]
 
-; [call]
-; 次のページの目次表示サブルーチンをコールします。
-[call target="&f.current_page_label"]
+  ; [call]
+  ; 次のページの目次表示サブルーチンをコールします。
+  [call target="&f.current_page_label"]
 
 ; [endignore]
 ; 無視する場合はここまで無視。

@@ -76,13 +76,10 @@
 ; [if]～[endif]
 ; もしゲーム変数 f._b の中身が１ならば、
 ; この間の記述を読み込みます。
-[if exp="f._b == 1"]
-
-; この部分はゲーム変数 f._b の中身が１の場合に読み込まれます。
-
-#akane
-この文章は資料編を最後まで読んでからのみ表示される。[p]
-
+[if exp="f._b == 1"]x
+  ; この部分はゲーム変数 f._b の中身が１の場合に読み込まれます。
+  #akane
+  この文章は資料編を最後まで読んでからのみ表示される。[p]
 [endif]
 
 
@@ -213,14 +210,14 @@ if (f.HP > 300) f.HP = 300
 ; HPが200以上、100以下、それ以外、で分岐させて、
 ; キャラクターフェイスを切り替えています。
 [if    exp="f.HP > 200"]
-[chara_mod name="akane" face="happy"   time="200"  wait="false" cross="false"]
-[chara_mod name="HP"    face="A"       time="200" cross="false"]
+  [chara_mod name="akane" face="happy"   time="200"  wait="false" cross="false"]
+  [chara_mod name="HP"    face="A"       time="200" cross="false"]
 [elsif exp="f.HP < 100"]
-[chara_mod name="akane" face="sad"     time="200"  wait="false" cross="false"]
-[chara_mod name="HP"    face="C"       time="200" cross="false"]
+  [chara_mod name="akane" face="sad"     time="200"  wait="false" cross="false"]
+  [chara_mod name="HP"    face="C"       time="200" cross="false"]
 [else                  ]
-[chara_mod name="akane" face="default" time="200"  wait="false" cross="false"]
-[chara_mod name="HP"    face="B"       time="200" cross="false"]
+  [chara_mod name="akane" face="default" time="200"  wait="false" cross="false"]
+  [chara_mod name="HP"    face="B"       time="200" cross="false"]
 [endif]
 
 ; [jump]
@@ -244,11 +241,11 @@ if (f.HP > 300) f.HP = 300
 ; [jump]タグで別のラベルに飛ばしたほうがよいでしょう。
 ; その際、不都合がなければジャンプ先に[clearstack]を置いてスタックを掃除しましょう。
 [if    exp="f.HP > 200"]
-なでてくれてありがとう！[p]
+  なでてくれてありがとう！[p]
 [elsif exp="f.HP < 100"]
-どつきまわしてくれてありがとう……。[p]
+  どつきまわしてくれてありがとう……。[p]
 [else]
-遊んでくれてありがとね～。[p]
+  遊んでくれてありがとね～。[p]
 [endif]
 
 

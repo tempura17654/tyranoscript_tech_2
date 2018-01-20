@@ -28,19 +28,19 @@
 [chara_face name="akane_anim_kuchi" face="angry_anim" storage="chara/akane_anim/kuchi_angry_anim.gif"]
 
 [macro name="akane/show"]
-[iscript]
-mp.x = Number(mp.x);
-mp.y = Number(mp.y);
-[endscript]
-[chara_show name="akane_anim_base"  left="& mp.x +   0" top="& mp.y +   0" time="0"]
-[chara_show name="akane_anim_me"    left="& mp.x + 144" top="& mp.y + 151" time="0"]
-[chara_show name="akane_anim_kuchi" left="& mp.x + 192" top="& mp.y + 209" time="0"]
+  [iscript]
+  mp.x = Number(mp.x);
+  mp.y = Number(mp.y);
+  [endscript]
+  [chara_show name="akane_anim_base"  left="& mp.x +   0" top="& mp.y +   0" time="0"]
+  [chara_show name="akane_anim_me"    left="& mp.x + 144" top="& mp.y + 151" time="0"]
+  [chara_show name="akane_anim_kuchi" left="& mp.x + 192" top="& mp.y + 209" time="0"]
 
-; [eval]
-;【！】ここに着目してください。
-; ゲーム変数 f.akane_kuchi に 'usual' という文字列データを格納しています。
-; これは現在のあかねの口の形がなにか？です。（具体的には[chara_face]で指定したface属性の値）
-[eval exp="f.akane_kuchi = 'usual']
+  ; [eval]
+  ;【！】ここに着目してください。
+  ; ゲーム変数 f.akane_kuchi に 'usual' という文字列データを格納しています。
+  ; これは現在のあかねの口の形がなにか？です。（具体的には[chara_face]で指定したface属性の値）
+  [eval exp="f.akane_kuchi = 'usual']
 
 [endmacro]
 
@@ -54,27 +54,27 @@ mp.y = Number(mp.y);
 ; あかねの口変更用マクロを定義します。
 ; f.akane_kuchi の更新を忘れないようにします。
 [macro name="akane/kuchi/usual"]
-[chara_mod name="akane_anim_kuchi" face="usual" time="0"]
-[eval exp="f.akane_kuchi = 'usual']
+  [chara_mod name="akane_anim_kuchi" face="usual" time="0"]
+  [eval exp="f.akane_kuchi = 'usual']
 [endmacro]
 [macro name="akane/kuchi/angry"]
-[chara_mod name="akane_anim_kuchi" face="angry" time="0"]
-[eval exp="f.akane_kuchi = 'angry']
+  [chara_mod name="akane_anim_kuchi" face="angry" time="0"]
+  [eval exp="f.akane_kuchi = 'angry']
 [endmacro]
 
 ; [macro]～[endmacro]
 ; 表情一括変更用マクロ定義。
 [macro name="akane/usual"]
-[akane/me/usual]
-[akane/kuchi/usual]
+  [akane/me/usual]
+  [akane/kuchi/usual]
 [endmacro]
 [macro name="akane/happy"]
-[akane/me/happy]
-[akane/kuchi/usual]
+  [akane/me/happy]
+  [akane/kuchi/usual]
 [endmacro]
 [macro name="akane/angry"]
-[akane/me/angry]
-[akane/kuchi/angry]
+  [akane/me/angry]
+  [akane/kuchi/angry]
 [endmacro]
 
 ; [macro]～[endmacro]

@@ -17,8 +17,8 @@
 ; [current]タグを用いてmessage0を指定し、
 ; また[er]タグでそのメッセージウィンドウのメッセージを消去しています。
 [macro name="M0"]
-[current layer="message0"]
-[er]
+  [current layer="message0"]
+  [er]
 [endmacro]
 
 ; ●[M1]
@@ -26,23 +26,23 @@
 ; 上記処理に加えて、
 ; 文字色の変更も行っています。
 [macro name="M1"]
-[current layer="message1"]
-[er]
-[font color="0x99ffcc" shadow="0x000000"]
+  [current layer="message1"]
+  [er]
+  [font color="0x99ffcc" shadow="0x000000"]
 [endmacro]
 
 ; ●[L1]
 ; 上のメッセージウィンドウに１行の文章を入れますよ、というマクロ。
 ; 余白の調整用です。
 [macro name="L1"]
-[position layer="message1" margint="85" marginr="50"]
+  [position layer="message1" margint="85" marginr="50"]
 [endmacro]
 
 ; ●[L2]
 ; 上のメッセージウィンドウに２行の文章を入れますよ、というマクロ。
 ; 余白の調整用です。
 [macro name="L2"]
-[position layer="message1" margint="62" marginr="50"]
+  [position layer="message1" margint="62" marginr="50"]
 [endmacro]
 
 ; ======================================================
@@ -122,9 +122,9 @@
 ; 矢印画像を出して、キーフレームアニメーションを適用します。
 [image name="arrow" layer="2" storage="arrow.png" left="50" top="370" width="70"]
 [keyframe name="up_down"]
-[frame p="  0%" y="  0"]
-[frame p=" 50%" y="-10"]
-[frame p="100%" y="  0"]
+  [frame p="  0%" y="  0"]
+  [frame p=" 50%" y="-10"]
+  [frame p="100%" y="  0"]
 [endkeyframe]
 [kanim name="arrow" keyframe="up_down" count="infinite" time="700"]
 

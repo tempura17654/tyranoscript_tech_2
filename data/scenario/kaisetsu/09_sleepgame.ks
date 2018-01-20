@@ -46,24 +46,24 @@
 ; 別のラベルから直接「*Part1」ラベルにジャンプしてきた場合はその限りではありません。
 [if exp=" f.sleep == 1 "]
 
-; [mask]～[mask_off]
-; f.sleep が 1 ならば、このラベルは夢の回想シーンとして呼ばれているということで、
-; 画面の再構築を行います。(飛んでくる前にどんな画面になってるかわからないので。)
-[mask time="400"]
+  ; [mask]～[mask_off]
+  ; f.sleep が 1 ならば、このラベルは夢の回想シーンとして呼ばれているということで、
+  ; 画面の再構築を行います。(飛んでくる前にどんな画面になってるかわからないので。)
+  [mask time="400"]
 
-; [destroy]
-; これは独自マクロです(→macro.ks)。
-; 画面にあるものすべてを破壊します。
-[destroy]
+  ; [destroy]
+  ; これは独自マクロです(→macro.ks)。
+  ; 画面にあるものすべてを破壊します。
+  [destroy]
 
-; [bg][chara_show][layopt]
-; 背景、キャラクター、メッセージウィンドウの再現。
-; 順当にこのシナリオにたどり着いた場合と同様の画面を再現するようにします。
-[bg time="0" storage="room.jpg"]
-[chara_show layer="1" time="0" name="akane" face="default" left="280" top="40"]
-[layopt layer="message0" visible="true"]
+  ; [bg][chara_show][layopt]
+  ; 背景、キャラクター、メッセージウィンドウの再現。
+  ; 順当にこのシナリオにたどり着いた場合と同様の画面を再現するようにします。
+  [bg time="0" storage="room.jpg"]
+  [chara_show layer="1" time="0" name="akane" face="default" left="280" top="40"]
+  [layopt layer="message0" visible="true"]
 
-[mask_off]
+  [mask_off]
 [endif]
 
 
@@ -79,11 +79,11 @@
 ; [if]～[endif]
 ; また分岐。
 [if exp=" f.sleep == 1 "]
-; もしここが夢の回想シーンとして呼ばれているなら、
-; ここで目覚めてしまいます。
-#
-……なんてことを言っていたっけ。[p]
-[awakegame]
+  ; もしここが夢の回想シーンとして呼ばれているなら、
+  ; ここで目覚めてしまいます。
+  #
+  ……なんてことを言っていたっけ。[p]
+  [awakegame]
 [endif]
 
 
@@ -256,16 +256,16 @@
 ; キーフレーム定義。
 ; 上下に拡縮を繰り返すことでキャラクターの呼吸表現を行います。
 [keyframe name="breath"]
-[frame p="  0%" y=" 0" scaleY="1.000"]
-[frame p=" 50%" y="-3" scaleY="1.004"]
-[frame p="100%" y=" 0" scaleY="1.000"]
+  [frame p="  0%" y=" 0" scaleY="1.000"]
+  [frame p=" 50%" y="-3" scaleY="1.004"]
+  [frame p="100%" y=" 0" scaleY="1.000"]
 [endkeyframe]
 
 ; こちらはskewXで変形を行うことでキャラクターの影を投影したような変形を行います。
 [keyframe name="shadow"]
-[frame p="  0%" y=" 0" scaleY="0.500" skewX="-20deg"]
-[frame p=" 50%" y="-2" scaleY="0.505"]
-[frame p="100%" y=" 0" scaleY="0.500"]
+  [frame p="  0%" y=" 0" scaleY="0.500" skewX="-20deg"]
+  [frame p=" 50%" y="-2" scaleY="0.505"]
+  [frame p="100%" y=" 0" scaleY="0.500"]
 [endkeyframe]
 
 ; [destroy]

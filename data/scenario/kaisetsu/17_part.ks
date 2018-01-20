@@ -64,38 +64,37 @@
 ; x, y にあかねのパーツを全表示するマクロです。
 [macro name="akane/show"]
 
-; [iscript]～[endscript]
-[iscript]
-; マクロに渡された属性値は、属性名の頭に mp. をつけることで扱うことができます。
-; ここで注意が必要で、マクロに渡された属性値はすべて文字列データになっています。
-;
-;(文字列データとは別に数値データというものもあり、両者は明確に扱いが異なります！
-; 文字列の足し算は '1' + '1' = '11' であり、数値の足し算は 1 + 1 = 2 となります。)
-;
-; ここでは、文字列データを数値データに変換する処理を行っています。
-; 何やってんだかわからん、わかりたくもないという場合何も考えずコピペしてください。
-mp.x     = Number(mp.x)
-mp.y     = Number(mp.y)
-; 初期値を指定します
-mp.layer = mp.layer || '0'
-[endscript]
+  ; [iscript]～[endscript]
+  [iscript]
+  ; マクロに渡された属性値は、属性名の頭に mp. をつけることで扱うことができます。
+  ; ここで注意が必要で、マクロに渡された属性値はすべて文字列データになっています。
+  ;
+  ;(文字列データとは別に数値データというものもあり、両者は明確に扱いが異なります！
+  ; 文字列の足し算は '1' + '1' = '11' であり、数値の足し算は 1 + 1 = 2 となります。)
+  ;
+  ; ここでは、文字列データを数値データに変換する処理を行っています。
+  mp.x     = Number(mp.x)
+  mp.y     = Number(mp.y)
+  ; 初期値を指定します
+  mp.layer = mp.layer || '0'
+  [endscript]
 
-; [chara_show]
-; 上で定義したパーツを表示していきます。
-;
-; left属性とtop属性の値の頭についている&に着目してください。
-; これは、そのあとに続く文字をJS式として評価せよという記号です。
-; つまり、たとえば「&mp.x + 142」は「mp.x の数値に 142 を足した値」を指定しています。
-;
-; また、layer="%layer"で、マクロに渡されたlayer属性の値をそのまま渡しています。
-; これはlayer="&mp.layer"と書いても同じです。
-[chara_show name="akane_part_base"     left="&mp.x +   0" top="&mp.y +   0" time="0" face="default" layer="%layer"]
-[chara_show name="akane_part_me"       left="&mp.x + 142" top="&mp.y + 147" time="0" face="default" layer="%layer"]
-[chara_show name="akane_part_kuchi"    left="&mp.x + 142" top="&mp.y + 206" time="0" face="default" layer="%layer"]
-[chara_show name="akane_part_mayu"     left="&mp.x + 142" top="&mp.y + 129" time="0" face="default" layer="%layer"]
-[chara_show name="akane_option_ase"    left="&mp.x + 142" top="&mp.y +  96" time="0" face="default" layer="%layer"]
-[chara_show name="akane_option_tere"   left="&mp.x + 142" top="&mp.y +  96" time="0" face="default" layer="%layer"]
-[chara_show name="akane_option_namida" left="&mp.x + 142" top="&mp.y +  96" time="0" face="default" layer="%layer"]
+  ; [chara_show]
+  ; 上で定義したパーツを表示していきます。
+  ;
+  ; left属性とtop属性の値の頭についている&に着目してください。
+  ; これは、そのあとに続く文字をJS式として評価せよという記号です。
+  ; つまり、たとえば「&mp.x + 142」は「mp.x の数値に 142 を足した値」を指定しています。
+  ;
+  ; また、layer="%layer"で、マクロに渡されたlayer属性の値をそのまま渡しています。
+  ; これはlayer="&mp.layer"と書いても同じです。
+  [chara_show name="akane_part_base"     left="&mp.x +   0" top="&mp.y +   0" time="0" face="default" layer="%layer"]
+  [chara_show name="akane_part_me"       left="&mp.x + 142" top="&mp.y + 147" time="0" face="default" layer="%layer"]
+  [chara_show name="akane_part_kuchi"    left="&mp.x + 142" top="&mp.y + 206" time="0" face="default" layer="%layer"]
+  [chara_show name="akane_part_mayu"     left="&mp.x + 142" top="&mp.y + 129" time="0" face="default" layer="%layer"]
+  [chara_show name="akane_option_ase"    left="&mp.x + 142" top="&mp.y +  96" time="0" face="default" layer="%layer"]
+  [chara_show name="akane_option_tere"   left="&mp.x + 142" top="&mp.y +  96" time="0" face="default" layer="%layer"]
+  [chara_show name="akane_option_namida" left="&mp.x + 142" top="&mp.y +  96" time="0" face="default" layer="%layer"]
 
 [endmacro]
 

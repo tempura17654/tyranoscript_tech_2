@@ -196,10 +196,10 @@
 ; これは、通常の立ち絵の表情を変えるついでに、
 ; ピックアップ用の立ち絵の表情も変えるというものです。
 [macro name="mod"]
-[chara_mod wait="false"  cross="%cross" name="%name" face="%face"]
-; [chara_mod]
-; face属性にJavaScript式を用いることで、ちょっとした工夫をしています。
-[chara_mod name="pickup" cross="%cross" face="& mp.name + '/' + mp.face" wait="%wait"]
+  [chara_mod wait="false"  cross="%cross" name="%name" face="%face"]
+  ; [chara_mod]
+  ; face属性にJavaScript式を用いることで、ちょっとした工夫をしています。
+  [chara_mod name="pickup" cross="%cross" face="& mp.name + '/' + mp.face" wait="%wait"]
 [endmacro]
 
 [current layer="message0"]

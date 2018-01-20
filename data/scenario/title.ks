@@ -28,15 +28,15 @@
 ; [keyframe][frame][endkeyframe]
 ; キーフレーム"walk"定義
 [keyframe name="walk"]
-[frame p="  0%" y="0"]
-[frame p="100%" y="8"]
+  [frame p="  0%" y="0"]
+  [frame p="100%" y="8"]
 [endkeyframe]
 
 ; [keyframe][frame][endkeyframe]
 ; キーフレーム"jump"定義
 [keyframe name="jump"]
-[frame p="  0%" y="  0"]
-[frame p="100%" y="-20"]
+  [frame p="  0%" y="  0"]
+  [frame p="100%" y="-20"]
 [endkeyframe]
 
 

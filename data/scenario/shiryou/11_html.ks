@@ -258,8 +258,8 @@ font-size: 60px;
 ; [keyframe]～[endkeyframe]
 ; 上に2500pxスライドさせるキーフレームアニメーションを定義。
 [keyframe name="scroll"]
-[frame p="  0%" y="    0"]
-[frame p="100%" y="-1700"]
+  [frame p="  0%" y="    0"]
+  [frame p="100%" y="-1700"]
 [endkeyframe]
 
 ; [kanim]

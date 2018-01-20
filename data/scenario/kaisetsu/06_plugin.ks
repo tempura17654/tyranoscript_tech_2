@@ -16,15 +16,15 @@
 ; キーフレームを定義します。
 ; これは矢印用。
 [keyframe name="left_right"]
-[frame p="  0%" y="  0" rotateZ="-90deg"]
-[frame p=" 50%" y="-10"]
-[frame p="100%" y="  0"]
+  [frame p="  0%" y="  0" rotateZ="-90deg"]
+  [frame p=" 50%" y="-10"]
+  [frame p="100%" y="  0"]
 [endkeyframe]
 ; こっちはプラグイン紹介Webページのスクリーンショット画像を
 ; スクロールさせるやつ。
 [keyframe name="scsho_up"]
-[frame p="  0%" y="    0"]
-[frame p="100%" y="-2600"]
+  [frame p="  0%" y="    0"]
+  [frame p="100%" y="-2600"]
 [endkeyframe]
 
 

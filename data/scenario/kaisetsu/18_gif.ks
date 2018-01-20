@@ -28,19 +28,19 @@
 [chara_face name="akane_anim_kuchi" face="angry_anim" storage="chara/akane_anim/kuchi_angry_anim.gif"]
 
 [macro name="akane/show"]
-[iscript]
-mp.x = Number(mp.x);
-mp.y = Number(mp.y);
-[endscript]
-[chara_show name="akane_anim_base"  left="&mp.x +   0" top="&mp.y +   0" time="0"]
-[chara_show name="akane_anim_me"    left="&mp.x + 144" top="&mp.y + 151" time="0"]
-[chara_show name="akane_anim_kuchi" left="&mp.x + 192" top="&mp.y + 209" time="0"]
+  [iscript]
+  mp.x = Number(mp.x);
+  mp.y = Number(mp.y);
+  [endscript]
+  [chara_show name="akane_anim_base"  left="&mp.x +   0" top="&mp.y +   0" time="0"]
+  [chara_show name="akane_anim_me"    left="&mp.x + 144" top="&mp.y + 151" time="0"]
+  [chara_show name="akane_anim_kuchi" left="&mp.x + 192" top="&mp.y + 209" time="0"]
 
-; [eval]
-;【！】ここに着目してください。
-; ゲーム変数 f.akane_kuchi に 'usual' という文字列データを格納しています。
-; これは現在のあかねの口の形（具体的には[chara_face]で指定したface属性の値）です。
-[eval exp="f.akane_kuchi = 'usual']
+  ; [eval]
+  ;【！】ここに着目してください。
+  ; ゲーム変数 f.akane_kuchi に 'usual' という文字列データを格納しています。
+  ; これは現在のあかねの口の形（具体的には[chara_face]で指定したface属性の値）です。
+  [eval exp="f.akane_kuchi = 'usual']
 
 [endmacro]
 
@@ -54,52 +54,52 @@ mp.y = Number(mp.y);
 ; あかねの口変更用マクロを定義します。
 ; f.akane_kuchi の更新を忘れないようにします。
 [macro name="akane/kuchi/usual"]
-[chara_mod name="akane_anim_kuchi" face="usual" time="0"]
-[eval exp="f.akane_kuchi = 'usual']
+  [chara_mod name="akane_anim_kuchi" face="usual" time="0"]
+  [eval exp="f.akane_kuchi = 'usual']
 [endmacro]
 [macro name="akane/kuchi/angry"]
-[chara_mod name="akane_anim_kuchi" face="angry" time="0"]
-[eval exp="f.akane_kuchi = 'angry']
+  [chara_mod name="akane_anim_kuchi" face="angry" time="0"]
+  [eval exp="f.akane_kuchi = 'angry']
 [endmacro]
 
 ; [macro]～[endmacro]
 ; 表情一括変更用マクロ定義。
 [macro name="akane/usual"]
-[akane/me/usual]
-[akane/kuchi/usual]
+  [akane/me/usual]
+  [akane/kuchi/usual]
 [endmacro]
 [macro name="akane/happy"]
-[akane/me/happy]
-[akane/kuchi/usual]
+  [akane/me/happy]
+  [akane/kuchi/usual]
 [endmacro]
 [macro name="akane/angry"]
-[akane/me/angry]
-[akane/kuchi/angry]
+  [akane/me/angry]
+  [akane/kuchi/angry]
 [endmacro]
 
 ; [macro]～[endmacro]
 ; 独自マクロ[akane/say]を定義します。
 ; あかねがしゃべるときに口パクをつけさせるために、特殊な処理を入れています。
 [macro name="akane/say"]
-#akane
-; [chara_mod]
-; face属性に着目してください。
-; f.akane_kuchi に入っている文字列に '_anim' を加えたものを
-; face属性に指定することで、アニメーションを開始しているのです。
-[chara_mod name="akane_anim_kuchi" time="0" face="&f.akane_kuchi + '_anim'"]
-[endmacro]
+  #akane
+  ; [chara_mod]
+  ; face属性に着目してください。
+  ; f.akane_kuchi に入っている文字列に '_anim' を加えたものを
+  ; face属性に指定することで、アニメーションを開始しているのです。
+  [chara_mod name="akane_anim_kuchi" time="0" face="&f.akane_kuchi + '_anim'"]
+  [endmacro]
 
-; [macro]～[endmacro]
-; 独自マクロ[_p]を定義します。これは[p]の代わりに使います。
-; 上の[akane/say]であかねが口パクを開始するのですが、
-; いつまでのパクパクしたままではまずいので、
-; テキストを表示し終わった際に口パクを止めさせたいわけです。
-[macro name="_p"]
-; [chara_mod]
-; f.akane_kuchi をface属性に指定することで、'_anim'が外れますので、
-; アニメーションが停止することになります。
-[chara_mod name="akane_anim_kuchi" time="0" face="&f.akane_kuchi"]
-[p]
+  ; [macro]～[endmacro]
+  ; 独自マクロ[_p]を定義します。これは[p]の代わりに使います。
+  ; 上の[akane/say]であかねが口パクを開始するのですが、
+  ; いつまでのパクパクしたままではまずいので、
+  ; テキストを表示し終わった際に口パクを止めさせたいわけです。
+  [macro name="_p"]
+  ; [chara_mod]
+  ; f.akane_kuchi をface属性に指定することで、'_anim'が外れますので、
+  ; アニメーションが停止することになります。
+  [chara_mod name="akane_anim_kuchi" time="0" face="&f.akane_kuchi"]
+  [p]
 [endmacro]
 
 

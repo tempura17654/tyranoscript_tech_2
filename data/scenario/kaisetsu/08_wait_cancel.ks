@@ -194,8 +194,8 @@
 ; [keyframe]～[endkeyframe]
 ; 拡縮するキーフレームアニメーション。
 [keyframe name="kanim_timer"]
-[frame p="  0%" scale="1.2"]
-[frame p=" 20%" scale="1"]
+  [frame p="  0%" scale="1.2"]
+  [frame p=" 20%" scale="1"]
 [endkeyframe]
 
 ; [image]

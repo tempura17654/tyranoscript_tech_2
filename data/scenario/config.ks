@@ -228,11 +228,11 @@ $('.unread_on').attr('src','data/image/config/c_uts_on.png');
 *backtitle
 
 [if exp=" $('.message1_fore').css('display') == 'none' "]
-[cm]
-[layopt layer=message1 visible=false]
-[freeimage layer=1]
-[clearfix]
-[awakegame]
+  [cm]
+  [layopt layer=message1 visible=false]
+  [freeimage layer=1]
+  [clearfix]
+  [awakegame]
 [endif]
 [return]
 

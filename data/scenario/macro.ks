@@ -213,10 +213,6 @@
   ; メッセージウィンドウを表示します。
   [layopt layer="message0" visible="true"]
   
-  ; === ここはおまじない。あまり気にしないでください ===
-  [clearanimstack]
-  ; ====================================================
-  
 [endmacro]
 
 
@@ -278,19 +274,6 @@
   [button name="role_button" role="menu"       graphic="button/menu.png"   enterimg="button/menu2.png"   x="& 9 * 80" y="615"]
   [button name="role_button" role="sleepgame"  graphic="button/config.png" enterimg="button/config2.png" x="&10 * 80" y="615" storage="config.ks"]
   [button name="role_button" role="title"      graphic="button/title.png"  enterimg="button/title2.png"  x="&11 * 80" y="615"]
-  
-  ; == おまじない ========================================
-  
-  ; 以下はちょっとしたおまじないです。あまり気にしないでください。
-  
-  [button name="role_button" role="skip" graphic="button/skip.png" enterimg="button/skip2.png" x="0" y="0" width="0"]
-  [keyframe name="none"]
-    [frame p="  0%" x="0"]
-    [frame p="100%" x="0"]
-  [endkeyframe]
-  [kanim layer="message0"      keyframe="none" time="0"]
-  [kanim name="layer_menu"     keyframe="none" time="0"]
-  [kanim name="role_button"    keyframe="none" time="0"]
   
 [endmacro]
 
